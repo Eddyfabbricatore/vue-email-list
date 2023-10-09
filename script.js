@@ -25,13 +25,15 @@ createApp({
     },
 
     getMails(){
-      for(let i = 1; i <= this.limit; i++){
-        this.getApi();
-      }
+      setTimeout(() => {
+        for(let i = 1; i <= this.limit; i++){
+          this.getApi();
+        }
+      }, 1000);
     }
   },
 
   mounted(){
-    setTimeout(this.getMails(), 1000);
+    this.getMails();
   }
 }).mount('#app');
